@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/pos_db');
+mongoose.connect('mongodb+srv://hnin:hnin@cluster0.gbo0s0e.mongodb.net/pos_db');
+//mongoose.connect('mongodb://127.0.0.1:27017/pos_db');
 const invoices = mongoose.model('invoices',{
     cname: String,
     sname: String,
