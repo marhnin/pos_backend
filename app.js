@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://hnin:hnin@cluster0.gbo0s0e.mongodb.net/pos_db');
+const port = process.env.PORT || 3000;
 //const port = Process.env.PORT || 3000 ;
 //mongoose.connect('mongodb://127.0.0.1:27017/pos_db');
 //mongoose.connect('mongodb+srv://hnin:hnin@cluster0.gbo0s0e.mongodb.net/pos_db');
@@ -84,4 +85,4 @@ app.post("/saveInvoices", (req, res) => {
     })
   });
 /*listener port*/
-app.listen(3000);
+app.listen(port || 3000);
