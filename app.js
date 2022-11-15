@@ -4,9 +4,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://hnin:hnin@cluster0.gbo0s0e.mongodb.net/pos_db');
 const port = process.env.PORT || 3000;
-//const port = Process.env.PORT || 3000 ;
-//mongoose.connect('mongodb://127.0.0.1:27017/pos_db');
-//mongoose.connect('mongodb+srv://hnin:hnin@cluster0.gbo0s0e.mongodb.net/pos_db');
 //mongoose.connect('mongodb://127.0.0.1:27017/pos_db');
 const invoices = mongoose.model('invoices',{
     cname: String,
@@ -43,7 +40,7 @@ app.post("/saveInvoices", (req, res) => {
       var skip = page * limit ;
       var totalCount = await invoices.count();
       if(totalCount == 0){
-        return callback('No doucment in database', null);
+        return 'No doucment in database';
         }
       const invoiceList = await invoices.find().skip(skip).limit(limit);
       res.json({
