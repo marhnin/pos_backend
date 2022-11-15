@@ -84,7 +84,4 @@ app.post("/saveInvoices", (req, res) => {
     })
   });
 /*listener port*/
-//app.listen(3000);
-server.listen(3000,()=>{
-  console.log("server listening to port "+3000);
-});
+app.listen(3000);
